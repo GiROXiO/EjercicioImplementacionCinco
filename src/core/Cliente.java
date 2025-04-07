@@ -16,6 +16,14 @@ public class Cliente extends Persona{
         return this.planes.get(index);
     }
     
+    public PlanCliente getPlan(){
+        for(PlanCliente plan : this.planes){
+            if(plan.isEstadoActivo())
+                return plan;
+        }
+        return null;
+    }
+    
     public void addPlan(PlanCliente planCliente){
         this.planes.add(planCliente);
     }

@@ -40,7 +40,7 @@ public class Clatzy {
     
     public void comprarPlan(Cliente cliente, Plan plan, LocalDate fecha){
         if(!cliente.clienteTienePlanActivo()){
-            PlanCliente pc = new PlanCliente(plan.getNombre(), fecha, plan.getValor(), cliente);
+            PlanCliente pc = new PlanCliente(plan.getNombre(), fecha, plan.getValor(), cliente, plan);
             pc.setEstadoActivo(true);
             cliente.addPlan(pc);
             System.out.println("El cliente "+cliente.getNombre()+" compro exitosamente un plan "+plan.getNombre());
